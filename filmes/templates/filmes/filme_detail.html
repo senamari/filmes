@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>{{ object.titulo }}</h2>
+<p>Artista: {{ object.direcao }}</p>
+<p>Álbum: {{ object.distribuicao }}</p>
+<p>Playlists:
+    {% for genero in object.genero_set.all %}
+        {{ genero.nome }}
+    {% endfor %}
+</p>
+
+{% endblock %}
